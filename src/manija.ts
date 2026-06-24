@@ -10,23 +10,36 @@ function repetirLetra(letra: string, cantidad: number): string {
  return retornar;
 }
 
-function filaTrianguloIsoceles(letra: string, fila: number, tamaño: number): string {
-  // COMPLETAR
-  /* fila n: 2*n+1 asteriscos, con espacios a izquierda a derecha 
-  Pueden asumir que el tamaño es impar, así el triángulo queda centrado. */
-  return "era un placeholder"
+function filaTrianguloIsoceles(letra: string, tamaño: number): string {
+  let x: number = 0;
+  let retornar: string = "";
+  while(x<tamaño){
+      retornar= retornar + letra; 
+    x++;
+  }
+ return retornar;
+
+  
 }
 let caracter: string = preguntar('Con que caracter vas a dibujar el triangulo? ');
 let tamaño: number = Number(preguntar('De que tamaño? '));
 let tipo: string = preguntar('Que tipo de triangulo? (isoceles, rectangulo) ');
 let n: number = 0;
-
+let m: number = tamaño;
 if (tipo==="Rectangulo" || tipo==="rectangulo"){
   while (n<tamaño+1){
     console.log(repetirLetra(caracter, n))
     n++;
   }
 }
+else if (tipo==="Isoceles" || tipo==="isoceles"){
+  console.log(repetirLetra(caracter, n))
+  while (m!==0){
+    console.log(filaTrianguloIsoceles( "a", m) + repetirLetra(caracter, n) + filaTrianguloIsoceles("a", m))
+    m=m-1;
+  }
+  console.log(repetirLetra(caracter, n))
+}
 else{
-  console.log ("hola")
+  console.log ("mal")
 }
