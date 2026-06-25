@@ -20,7 +20,7 @@ function filaTrianguloIsoceles(letra: string, tamaño: number, fila : number): s
 }
 let caracter: string = preguntar('Con que caracter vas a dibujar el triangulo? ');
 let tamaño: number = Number(preguntar('De que tamaño? '));
-let tipo: string = preguntar('Que tipo de triangulo? (isoceles, rectangulo) ');
+let tipo: string = preguntar('Que tipo de triangulo? (isosceles, rectangulo) ');
 let n: number = 0;
 let m: number = tamaño;
 if (tipo==="Rectangulo" || tipo==="rectangulo"){
@@ -29,7 +29,7 @@ if (tipo==="Rectangulo" || tipo==="rectangulo"){
     n++;
   }
 }
-else if (tipo==="Isoceles" || tipo==="isoceles" || tipo==="s"){
+else if (tipo==="Isosceles" || tipo==="isosceles" || tipo==="s"){
  
 }
 else{
