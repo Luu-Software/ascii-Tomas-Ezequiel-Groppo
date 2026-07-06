@@ -11,12 +11,13 @@ function repetirLetra(letra: string, cantidad: number): string {
 }
 
 function filaTrianguloIsoceles(letra: string, tamaño: number, fila : number): string {
-  fila=-tamaño;
+  fila=(fila-0.5)*2
    let espacio: string = " "
    let retornar: string= "";
-   retornar= repetirLetra(letra,fila)
+   retornar = repetirLetra(" ",tamaño)+repetirLetra(letra, fila)+repetirLetra(" ",tamaño)
+      
    
-  return "hola"
+  return retornar
 }
 let caracter: string = preguntar('Con que caracter vas a dibujar el triangulo? ');
 let tamaño: number = Number(preguntar('De que tamaño? '));
@@ -25,13 +26,20 @@ let n: number = 0;
 let m: number = tamaño;
 if (tipo==="Rectangulo" || tipo==="rectangulo"){
   while (n<tamaño+1){
-    console.log(repetirLetra(caracter, n))
+    console.log(repetirLetra(caracter, n));
     n++;
   }
 }
-else if (tipo==="Isosceles" || tipo==="isosceles" || tipo==="s"){
- 
+else if (tipo==="Isosceles" || tipo==="isosceles"){
+  while (n<tamaño+1){
+    console.log(filaTrianguloIsoceles(caracter, m, n));
+    n++;
+    m=m-1;
+  }
+}
+else if(tipo==="Isoceles" || tipo==="isoceles"){
+  console.log("Se escribe isosceles");
 }
 else{
-  console.log ("mal")
+  console.log ("No es un triangulo valido");
 }
